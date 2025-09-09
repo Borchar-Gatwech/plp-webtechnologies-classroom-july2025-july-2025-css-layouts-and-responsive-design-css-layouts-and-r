@@ -1,0 +1,110 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Navigation with Flexbox */
+nav {
+  background: #333;
+}
+.nav-links {
+  list-style: none;
+  display: flex;              /* Flexbox here */
+  justify-content: center;
+  flex-wrap: wrap;            /* Allows wrapping on smaller screens */
+}
+.nav-links li {
+  margin: 0.5rem;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.nav-links a:hover {
+  background: #575757;
+  border-radius: 5px;
+}
+
+/* Main Grid Layout */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;  /* Content + Sidebar */
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Content */
+.content {
+  background: #f4f4f4;
+  padding: 1rem;
+}
+
+/* Flexbox Cards */
+.card-container {
+  display: flex;             /* Flexbox for cards */
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.card {
+  flex: 1 1 150px;           /* Flexible, minimum width 150px */
+  background: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Sidebar */
+.sidebar {
+  background: #e2e2e2;
+  padding: 1rem;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* ============================= */
+/* Responsive Design with Media Queries */
+/* ============================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .grid-layout {
+    grid-template-columns: 2fr 1fr; /* Adjust proportions */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .grid-layout {
+    grid-template-columns: 1fr; /* Stack content + sidebar */
+  }
+  .nav-links {
+    flex-direction: column;  /* Stack nav links vertically */
+    align-items: center;
+  }
+}
+
